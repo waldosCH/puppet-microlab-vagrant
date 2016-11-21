@@ -6,11 +6,14 @@ mod 'archive',
 mod 'concat',
   :git => 'https://github.com/puppetlabs/puppetlabs-concat.git'
 
+mod 'hiera',
+  :git => 'ssh://grinm@apps.waldos.ch:29418/waldosLab/hiera_labo.git'
+
 mod 'stdlib',
   :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
 
-mod 'skynode',
-  :git => 'ssh://grinm@apps.waldos.ch:29418/skyguide/skynode.git',
+mod 'mynode',
+  :git => 'ssh://grinm@apps.waldos.ch:29418/waldosLab/mynode.git',
   :branch => 'labo'
 
 mod 'systemd',
