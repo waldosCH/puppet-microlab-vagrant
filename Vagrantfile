@@ -9,8 +9,9 @@ Vagrant.configure(2) do |config|
     vb.cpus   = 1
   end
 
-  config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera/hiera.yaml /etc/puppet/hiera.yaml"
-  config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera /etc/puppet/hiera"
+  # comment these 2 lines as we don't want to have hiera "applied" for this step of the labo
+  #config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera/hiera.yaml /etc/puppet/hiera.yaml"
+  #config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera /etc/puppet/hiera"
   config.vm.provision "file", source: "puppet-facters/environment.rb", destination: "/tmp/environment.rb"
   config.vm.provision "shell", inline: "cp /tmp/environment.rb /usr/share/ruby/vendor_ruby/facter/environment.rb" 
 
