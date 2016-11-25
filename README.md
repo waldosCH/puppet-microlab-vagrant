@@ -22,6 +22,7 @@ For that labo the following must be present on your machine:
 
 - [VirtualBox](https://www.virtualbox.org/manual/ch02.html)
 - [Vagrant](https://www.vagrantup.com/docs/installation/)
+- [r10k](https://github.com/puppetlabs/r10k)
 
 
 ## Setup
@@ -221,7 +222,7 @@ For example :
 --- cat hieradata/vagrant/hosts/vagrant-node-1.yaml
 
 ---
-mynode::message: 'hello world from hosts hiera
+mynode::message: 'hello world from hosts hiera'
 ```
 
 The variable must be declared in that format.
