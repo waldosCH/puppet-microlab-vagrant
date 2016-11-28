@@ -7,13 +7,13 @@ mod 'concat',
   :git => 'https://github.com/puppetlabs/puppetlabs-concat.git'
 
 mod 'hiera',
-  :git => 'ssh://grinm@apps.waldos.ch:29418/waldosLab/hiera_labo.git'
+  :git => 'https://github.com/waldosCH/puppet-microlab-hiera.git'
 
 mod 'stdlib',
   :git => 'https://github.com/puppetlabs/puppetlabs-stdlib.git'
 
 mod 'mynode',
-  :git => 'ssh://grinm@apps.waldos.ch:29418/waldosLab/mynode.git',
+  :git => 'https://github.com/waldosCH/puppet-microlab-mynode.git',
   :branch => 'labo'
 
 mod 'systemd',
