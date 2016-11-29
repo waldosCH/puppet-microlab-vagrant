@@ -11,8 +11,6 @@ Vagrant.configure(2) do |config|
 
   config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera/hiera.yaml /etc/puppet/hiera.yaml"
   config.vm.provision "shell", inline: "ln -fs /vagrant/modules/hiera /etc/puppet/hiera"
-  config.vm.provision "file", source: "puppet-facters/environment.rb", destination: "/tmp/environment.rb"
-  config.vm.provision "shell", inline: "cp /tmp/environment.rb /usr/share/ruby/vendor_ruby/facter/environment.rb" 
 
   config.vm.define "node1", autostart: false do |node1|
     node1.vm.hostname = "vagrant-node-1"
@@ -31,6 +29,10 @@ Vagrant.configure(2) do |config|
       puppet.manifest_file = 'infra.pp'
       puppet.module_path = 'modules'
       puppet.working_directory = "/tmp/vagrant-puppet"
+      puppet.facter = {
+        "environment" => "vagrant"
+      }
+ 
   end
 
 end
